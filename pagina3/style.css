@@ -1,0 +1,395 @@
+
+        :root {
+            
+            --primary-subdued: hsl(254, 88%, 90%); 
+            --primary-base: hsl(256, 67%, 59%); 
+            --accent-subdued: hsl(31, 66%, 93%); 
+            --accent-base: hsl(39, 100%, 71%); 
+            --white: hsl(0, 0%, 100%);
+            --off-white: hsl(0, 0%, 96%);
+            --black: hsl(0, 0%, 7%);
+            /* Tamaños de Fuente */
+            --fs-reg: 1.25rem;
+            --fs-md: 2.25rem;
+            --fs-lg: 3rem;
+            --fs-xl: 4rem;
+            /* Estilos de Tarjeta Base */
+            --bento-card-padding: 24px; 
+            --bento-card-border-radius: 18px;
+            --bento-card-gap: 20px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+        h1, h2, h3, h4, h5, h6, p, ul, ol, figure { margin: 0; }
+        h1, h2, h3, h4, h5, h6 { font-weight: 500; }
+        img { max-width: 100%; display: block; border-radius: 0.75rem; } 
+        
+        html {
+            font-family: "DM Sans", "Inter", sans-serif;
+            line-height: 1.3;
+        }
+        
+        body {
+            margin: 32px;
+            color: var(--black);
+            font-size: var(--fs-reg);
+            background: var(--off-white);
+            min-height: 100vh;
+        }
+
+        h1, h2 {
+            color: var(--heading-foreground, inherit);
+            font-size: var(--heading-font-size, var(--fs-md));
+            line-height: 1.1;
+            text-wrap: balance;
+        }
+        
+        h1 span, h2 span {
+            display: var(--heading-span-display, inline);
+            color: var(--heading-span-foreground, var(--black));
+            font-size: var(--heading-span-font-size, inherit);
+            font-style: var(--heading-span-style, normal);
+        }
+
+       
+        .parent > div {
+            color: var(--bento-card-foreground, var(--black));
+            background-color: var(--bento-card-surface, var(--white));
+            padding: var(--bento-card-padding, 32px);
+            border-radius: var(--bento-card-border-radius, 21px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            overflow: hidden;
+            
+            
+            display: flex;
+            flex-direction: column;
+            gap: var(--bento-card-gap, 32px);
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            
+            grid-auto-rows: auto;
+            gap: 20px; 
+            max-width: 1200px; 
+            width: 90%;
+            margin: 0 auto;
+        }
+            
+        .div5 {
+            grid-row: span 4 / span 4;
+        }
+
+        .div7 {
+            grid-row: span 3 / span 3;
+            grid-column-start: 2;
+            grid-row-start: 4;
+        }
+
+        .div8 {
+            grid-row: span 3 / span 3;
+            grid-column-start: 2;
+            grid-row-start: 7;
+        }
+
+        .div9 {
+            grid-row: span 5 / span 5;
+            grid-column-start: 1;
+            grid-row-start: 5;
+        }
+
+        .div10 {
+            grid-column: span 2 / span 2;
+            grid-row: span 3 / span 3;
+            grid-column-start: 2;
+            grid-row-start: 1;
+            align-items: center; 
+            text-align: center;
+        }
+
+        .div11 {
+            grid-row: span 3 / span 3;
+            grid-column-start: 3;
+            grid-row-start: 4;
+        }
+
+        .div12 {
+            grid-column: span 2 / span 2;
+            grid-row: span 3 / span 3;
+            grid-column-start: 3;
+            grid-row-start: 7;
+            align-items: center; 
+            text-align: center;
+        }
+
+        .div13 {
+            grid-row: span 6 / span 6;
+            grid-column-start: 4;
+            grid-row-start: 1;
+        }
+        
+       
+        .div10 {
+            --heading-font-size: var(--fs-xl);
+            --heading-span-foreground: var(--accent-base);
+            --bento-card-foreground: var(--white);
+            --bento-card-surface: var(--primary-base);
+            --bento-card-padding: 48px;
+        }
+        .div10 img {
+            max-width: 200px; 
+        }
+        .div10 p {
+            font-size: var(--fs-reg);
+            margin-top: -16px;
+            text-align: center;
+            width: 100%;
+            align-self: center;
+        }
+        
+        
+        .div5 {
+            --bento-card-surface: var(--accent-subdued);
+            --bento-card-gap: 16px;
+            
+            align-items: flex-start;
+        }
+        .div5 h2 {
+            --heading-font-size: var(--fs-lg);
+            --heading-span-foreground: var(--accent-base);
+            margin-bottom: 16px;
+        }
+        .div5 img {
+          
+            margin-top: 28px;
+            width: 150px;
+        }
+
+        
+        .div9 {
+            --bento-card-surface: var(--accent-base);
+            --bento-card-gap: 16px;
+            align-items: flex-start;
+        }
+        .div9 h2 {
+             --heading-font-size: var(--fs-lg);
+        }
+        .div9 img {
+            margin-top: 30px; 
+            align-self: center;
+            width: 100%;
+            max-width: 280px;
+        }
+
+        
+        .div13 {
+            --bento-card-surface: var(--primary-subdued);
+            --bento-card-gap: 16px;
+            align-items: center;
+            text-align: center;
+        }
+        .div13 h2 {
+            --heading-font-size: var(--fs-lg);
+        }
+        .div13 img {
+            
+            width: 100%;
+            max-width: 100%;
+            max-height: 320px;
+            object-fit: cover;
+            margin-top: 18px; 
+            display: block;
+        }
+
+        
+        .div7 {
+            --bento-card-gap: 16px;
+            align-items: center;
+            text-align: center;
+        }
+        .div7 img {
+            
+            width: 220px;
+            max-width: 60%;
+            margin-top: 8px;
+        }
+
+      
+        .div11 {
+            --bento-card-surface: var(--accent-base);
+            --bento-card-gap: 16px;
+            align-items: center;
+            text-align: center;
+        }
+        .div11 img {
+            width: 150px;
+        }
+
+        
+        .div8 {
+            --bento-card-gap: 16px;
+            align-items: center;
+            text-align: center;
+        }
+        .div8 h2 {
+            --heading-font-size: var(--fs-lg);
+            --heading-span-foreground: var(--primary-base);
+        }
+        .div8 img {
+            width: 100%;
+            max-width: 250px;
+        }
+
+        
+        .div12 {
+            --bento-card-surface: var(--primary-base);
+            --bento-card-foreground: var(--white);
+            --bento-card-gap: 16px;
+        }
+        .div12 h2 {
+            --heading-font-size: var(--fs-md);
+        }
+        .div12 img {
+            width: 45%;
+            max-width: 260px;
+            margin: 0;
+        }
+
+        
+        .div5, .div10, .div13, .div11, .div7, .div12 {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center; 
+            text-align: center;
+        }
+
+        .div5 img, .div10 img, .div13 img, .div11 img, .div7 img, .div12 img {
+            margin: 0 auto; 
+            display: block;
+            height: auto;
+        }
+
+
+    .div5 img { max-width: 220px; }
+    .div10 img { max-width: 220px; }
+    .div13 img { max-width: 520px; }
+    .div11 img { max-width: 180px; }
+    .div7 img { max-width: 260px; }
+    .div12 img { max-width: 260px; }
+
+   
+    .div10 p { text-align: center; margin: 8px 0 0; width:100%; align-self:center; }
+        .div12 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: left;
+            gap: 20px;
+        }
+        .div12 img { order: -1; }
+        .div12 h2 { order: 1; }
+
+       
+        .div5 img {
+            margin-top: 28px; 
+            max-width: 220px;
+        }
+
+        .div9 img {
+            margin-top: 30px;
+            max-width: 280px;
+        }
+
+        .div13 img {
+            width: 100%;
+            max-width: 520px; 
+            margin-top: 20px;
+        }
+
+        .div7 img {
+            order: -1; 
+            margin-bottom: 12px; 
+            max-width: 260px;
+            width: auto;
+        }
+
+        
+        @media (min-width: 961px) {
+       
+            .div12 {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                text-align: left;
+                gap: 24px;
+            }
+            .div12 img {
+                order: 0;
+                flex: 0 0 48%;
+                width: 100%;
+                max-width: 420px;
+                margin: 0;
+            }
+            .div12 h2 {
+                order: 1;
+                flex: 1 0 48%;
+            }
+
+            
+            .div13 img {
+                width: 130%;
+                max-width: 900px;
+                margin-top: 28px;
+            }
+            .div13 p {
+                margin-top: 36px;
+            }
+
+            
+            .div5 img { margin-top: 32px; }
+            .div9 img { margin-top: 36px; }
+
+            .div7 img { margin-bottom: 18px; }
+        }
+
+        
+        @media (max-width: 960px) {
+            .div12 { flex-direction: column; align-items: center; text-align: center; }
+            .div12 img { order: 0; width: 70%; max-width: 300px; }
+            .div12 h2 { order: 1; }
+        }
+
+
+
+        
+        @media (max-width: 1200px) {
+            .parent {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+                gap: 16px;
+            }
+
+            .parent > div {
+                grid-row: auto;
+                grid-column: span 1;
+                grid-row-start: auto;
+                grid-column-start: auto;
+                align-items: flex-start;
+                text-align: left;
+            }
+            .div10, .div12 {
+                 grid-column: span 2;
+                 align-items: center;
+                 text-align: center;
+            }
+            .div10 h1, .div5 h2, .div9 h2, .div13 h2, .div8 h2 {
+                --heading-font-size: var(--fs-md);
+            }
+        }
+        
