@@ -1,0 +1,321 @@
+/* Variables CSS */
+:root {
+    /* Colores */
+    --color-fondo: gainsboro;
+    --color-blanco: #fff;
+    --color-gris-claro: #f5f5f5;
+    --color-gris-medio: #e0e0e0;
+    --color-texto: #333;
+    --color-texto-oscuro: #000;
+    
+    /* Fuentes */
+    --fuente-titulo: 'TituloFont', 'Brush Script MT', cursive;
+    --fuente-texto: sans-serif;
+    
+    /* Tamaños de fuente */
+    --font-size-pequeño: 0.85rem;
+    --font-size-normal: 0.9rem;
+    --font-size-mediano: 0.95rem;
+    --font-size-grande: 1rem;
+    --font-size-titulo-movil: 2rem;
+    --font-size-titulo-tablet: 2.5rem;
+    --font-size-titulo-desktop: 2.5rem;
+    
+    /* Espaciados */
+    --gap-movil: 10px;
+    --gap-tablet: 15px;
+    --gap-desktop: 10px;
+    --padding-movil: 10px;
+    --padding-tablet: 15px;
+    --padding-desktop: 20px;
+    --padding-texto-movil: 25px;
+    --padding-texto-tablet: 30px;
+    --padding-texto-desktop: 20px;
+    
+    /* Alturas mínimas */
+    --min-height-imagen-movil: 200px;
+    --min-height-imagen-tablet: 220px;
+    --min-height-imagen-desktop: 250px;
+    --min-height-texto-movil: 150px;
+    --min-height-texto-tablet: 160px;
+    --min-height-texto-desktop: 120px;
+    
+    /* Alturas para imágenes cuadradas en desktop */
+    --altura-cuadrada-desktop: 300px;
+    
+    /* Transiciones */
+    --transition-hover: 0.3s ease;
+    
+    /* Breakpoints */
+    --breakpoint-tablet: 768px;
+    --breakpoint-desktop: 1024px;
+}
+
+/* Importar fuente personalizada para títulos */
+@font-face {
+    font-family: 'TituloFont';
+    src: url('fonts/fontTitulo3.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos del body */
+body {
+    background-color: var(--color-fondo);
+    font-family: var(--fuente-texto);
+    padding: var(--padding-movil);
+}
+
+/* ===================================
+   MÓVIL FIRST - Estilos base (móvil)
+   =================================== */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap-movil);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.grid-col {
+    display: grid;
+    gap: var(--gap-movil);
+}
+
+/* Por defecto todo en 1 columna en móvil */
+.subgrid {
+    display: grid;
+    gap: var(--gap-movil);
+}
+
+.grid-item {
+    background-color: var(--color-blanco);
+    overflow: hidden;
+    position: relative;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    min-height: var(--min-height-imagen-movil);
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+    transition: filter var(--transition-hover);
+}
+
+/* Efecto hover: imagen gris y cursor mano */
+.grid-item img:hover {
+    filter: grayscale(100%);
+    cursor: pointer;
+}
+
+/* Items con texto */
+.grid-item.item-text {
+    background-color: var(--color-gris-claro);
+    padding: var(--padding-texto-movil);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: var(--min-height-texto-movil);
+}
+
+.item-text .lorem {
+    font-style: italic;
+    font-size: var(--font-size-mediano);
+    line-height: 1.5;
+    margin-bottom: 12px;
+    color: var(--color-texto);
+}
+
+.item-text .author {
+    font-weight: bold;
+    font-size: var(--font-size-normal);
+    color: var(--color-texto-oscuro);
+}
+
+/* Item central con "Buena Suerte" */
+.grid-item.item-center {
+    background-color: var(--color-gris-medio);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: var(--min-height-texto-movil);
+}
+
+.item-center h1 {
+    font-family: var(--fuente-titulo);
+    font-size: var(--font-size-titulo-movil);
+    color: var(--color-texto);
+    text-align: center;
+}
+
+/* ===================================
+   TABLET - min-width: 768px
+   =================================== */
+
+@media (min-width: 768px) {
+    body {
+        padding: var(--padding-tablet);
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--gap-tablet);
+    }
+
+    .grid-col {
+        gap: var(--gap-tablet);
+    }
+
+    .subgrid {
+        gap: var(--gap-tablet);
+    }
+
+    .grid-item img {
+        min-height: var(--min-height-imagen-tablet);
+    }
+
+    .grid-item.item-text {
+        min-height: var(--min-height-texto-tablet);
+        padding: var(--padding-texto-tablet);
+    }
+
+    .item-text .lorem {
+        font-size: var(--font-size-grande);
+    }
+
+    .item-center h1 {
+        font-size: var(--font-size-titulo-tablet);
+    }
+}
+
+/* ===================================
+   DESKTOP - min-width: 1024px
+   =================================== */
+
+@media (min-width: 1024px) {
+    body {
+        padding: var(--padding-desktop);
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: var(--gap-desktop);
+    }
+
+    /* FILA 1 - COLUMNA 1: Bosque grande y (Girasoles + frase) */
+    .col-1-row-1 {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--gap-desktop);
+    }
+
+    /* FILA 1 - COLUMNA 2: (Frase + imagen) y Puente grande */
+    .col-2-row-1 {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--gap-desktop);
+    }
+
+    /* FILA 1 - COLUMNA 3: Océano arriba y Pájaros abajo */
+    .col-3-row-1 {
+        grid-column: span 1;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        gap: var(--gap-desktop);
+    }
+
+    /* FILA 2 - COLUMNA 1: Globo grande (ocupa todo) */
+    .col-1-row-2 {
+        grid-column: span 2;
+        display: grid;
+    }
+
+    /* FILA 2 - COLUMNA 2: Buena Suerte arriba, imagen abajo */
+    .col-2-row-2 {
+        grid-column: span 2;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        gap: var(--gap-desktop);
+    }
+
+    /* FILA 2 - COLUMNA 3: Frase arriba, imagen abajo */
+    .col-3-row-2 {
+        grid-column: span 1;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        gap: var(--gap-desktop);
+    }
+
+    .grid-col {
+        gap: var(--gap-desktop);
+    }
+
+    .subgrid {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        gap: var(--gap-desktop);
+    }
+
+    /* Todas las imágenes tienen altura mínima por defecto */
+    .grid-item img {
+        min-height: var(--min-height-imagen-desktop);
+    }
+
+    /* Imágenes cuadradas específicas con altura fija IGUAL */
+    .col-1-row-1 .subgrid .grid-item:first-child img,  /* Girasoles */
+    .col-2-row-1 .subgrid .grid-item:last-child img,   /* Montaña */
+    .col-3-row-1 .grid-item img,                       /* Océano y Pájaros */
+    .col-2-row-2 .grid-item:last-child img,            /* Montañero */
+    .col-3-row-2 .grid-item:last-child img {           /* Sombrero */
+        height: var(--altura-cuadrada-desktop);
+        min-height: var(--altura-cuadrada-desktop);
+        max-height: var(--altura-cuadrada-desktop);
+    }
+
+    /* Forzar altura igual para los items de texto que acompañan */
+    .col-1-row-1 .subgrid .grid-item.item-text,
+    .col-2-row-1 .subgrid .grid-item.item-text,
+    .col-3-row-2 .grid-item.item-text {
+        height: var(--altura-cuadrada-desktop);
+        min-height: var(--altura-cuadrada-desktop);
+        max-height: var(--altura-cuadrada-desktop);
+    }
+
+    .grid-item.item-text {
+        min-height: var(--min-height-texto-desktop);
+        padding: var(--padding-texto-desktop);
+    }
+a
+    .item-text .lorem {
+        font-size: var(--font-size-normal);
+        margin-bottom: 10px;
+    }
+
+    .item-text .author {
+        font-size: var(--font-size-pequeño);
+    }
+
+    .grid-item.item-center {
+        height: var(--altura-cuadrada-desktop);
+        min-height: var(--altura-cuadrada-desktop);
+        max-height: var(--altura-cuadrada-desktop);
+    }
+
+    .item-center h1 {
+        font-size: var(--font-size-titulo-desktop);
+    }
+}

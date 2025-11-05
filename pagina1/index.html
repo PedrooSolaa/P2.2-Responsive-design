@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 1 - Grid Responsive Mobile First</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="grid-container">
+        <!-- FILA 1 -->
+        <!-- Columna 1: Bosque grande y Girasoles con frase -->
+        <div class="grid-col col-1-row-1">
+            <div class="grid-item">
+                <img src="imagenes/bloque3-img1.jpg" alt="Bosque">
+            </div>
+            <div class="subgrid">
+                <div class="grid-item">
+                    <img src="imagenes/bloque3-img2.jpg" alt="Girasoles">
+                </div>
+                <div class="grid-item item-text">
+                    <p class="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                    <p class="author">John Doe</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna 2: Frase con imagen debajo y Puente grande -->
+        <div class="grid-col col-2-row-1">
+            <div class="subgrid">
+                <div class="grid-item item-text">
+                    <p class="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                    <p class="author">John Doe</p>
+                </div>
+                <div class="grid-item">
+                    <img src="imagenes/bloque3-img5.jpg" alt="Montaña">
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="imagenes/bloque3-img3.jpg" alt="Puente Golden Gate">
+            </div>
+        </div>
+
+        <!-- Columna 3: Océano arriba y Pájaros abajo -->
+        <div class="grid-col col-3-row-1">
+            <div class="grid-item">
+                <img src="imagenes/bloque3-img4.jpg" alt="Océano">
+            </div>
+            <div class="grid-item">
+                <img src="imagenes/bloque3-img6.jpg" alt="Pájaros">
+            </div>
+        </div>
+
+        <!-- FILA 2 -->
+        <!-- Columna 1: Globo grande -->
+        <div class="grid-col col-1-row-2">
+            <div class="grid-item">
+                <img src="imagenes/bloque3-img7.jpg" alt="Globo terráqueo">
+            </div>
+        </div>
+
+        <!-- Columna 2: Buena Suerte arriba, imagen abajo -->
+        <div class="grid-col col-2-row-2">
+            <div class="grid-item item-center">
+                <h1>Buena Suerte</h1>
+            </div>
+            <div class="grid-item">
+                <img src="imagenes/bloque3-img8.jpg" alt="Montañero">
+            </div>
+        </div>
+
+        <!-- Columna 3: Frase arriba, imagen abajo -->
+        <div class="grid-col col-3-row-2">
+            <div class="grid-item item-text">
+                <p class="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                <p class="author">John Doe</p>
+            </div>
+            <div class="grid-item">
+                <img src="imagenes/bloque3-img9.jpg" alt="Sombrero">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
