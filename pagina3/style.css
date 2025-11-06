@@ -392,4 +392,39 @@
                 --heading-font-size: var(--fs-md);
             }
         }
-        
+
+@media (max-width: 768px) {
+  body {
+    margin: 15px; /* Quita los márgenes laterales del body */
+  }
+
+  .parent {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 16px;
+    width: 100%; /* Ocupa todo el ancho */
+    max-width: none; 
+    margin: 0; /* Elimina el margen centrado */
+  }
+
+  .parent > div {
+    grid-column: auto;
+    grid-row: auto;
+    text-align: center;
+    align-items: center;
+    border-radius: 0; /* Opcional: quita bordes redondeados si quieres que ocupen todo el ancho */
+  }
+
+  .div12 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .div12 img {
+    order: 0;
+    width: 80%;
+    max-width: 280px;
+    margin-bottom: 16px;
+  }
+}
+
